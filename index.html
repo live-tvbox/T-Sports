@@ -162,6 +162,21 @@ hockey, and more. Stream your favorite sports teams and events in HD, with no ca
         }
     });
 </script>
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const player = new Plyr('video', { fullscreen: { enabled: true, fallback: true, iosNative: true } });
+    });
+
+	document.querySelector("video").addEventListener('click', () => {
+    const video = document.querySelector("video");
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); // For iOS Safari
+    }
+});
+
+</script>
 </body>
 </html>
 
